@@ -17,6 +17,10 @@ import CreateAssignment from './Pages/CreateAssignment';
 import ErrorPage from './Pages/ErrorPage';
 import AllAssignment from './Pages/AllAssignment';
 import Update from './Pages/Update';
+import Details from './Pages/Details';
+import MyList from './Pages/MyList';
+import PrivateRoute from './PrivateRoute/PrivateRoute';
+
 
 
 const router = createBrowserRouter([
@@ -43,7 +47,9 @@ const router = createBrowserRouter([
       },
       {
         path: "/createassignment",
-        element:<CreateAssignment></CreateAssignment>
+        element:<PrivateRoute>
+          <CreateAssignment></CreateAssignment>
+        </PrivateRoute>
       },
       {
         path: "/assignment",
@@ -51,9 +57,19 @@ const router = createBrowserRouter([
         loader: () => fetch('http://localhost:5000/assignment').then(res => res.json()),
       },
       {
-        path:"/update",
+        path:"/update/:id",
         element:<Update></Update>,
         // loader:({params})=> fetch(`http://localhost:5000/${params.email}/${params.id}`)
+        loader:(params) => fetch(`http://localhost:5000/${params.id}`)
+      },
+      // Update route configuration in main.jsx
+      {
+        path: "/details/:id",
+        element: <Details />
+      },
+      {
+        path: "/mylist",
+        element: <MyList></MyList>
       },
     ]
   },

@@ -49,6 +49,14 @@ const NavBar = () => {
           All Assignment
         </NavLink>
       </li>
+      <li>
+        <NavLink
+          activeClassName="border-2 bg-transparent text-blue-500 border-blue-500"
+          to="/mylist"
+        >
+          My List
+        </NavLink>
+      </li>
       
       <li>
         <NavLink

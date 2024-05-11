@@ -17,39 +17,42 @@ const CreateAssignment = () => {
 
   const notify = () => toast("Assignment created successfully!");
 
-  const handleSubmit = async (event) => {
-    event.preventDefault();
-    const assignmentData = {
-      name: user?.displayName,
-      email: user?.email,
-      title,
-      description,
-      marks,
-      thumbnailUrl,
-      difficultyLevel,
-      dueDate,
-    };
+  // Inside CreateAssignment component
 
-    try {
-      const response = await fetch("http://localhost:5000/assignment", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(assignmentData),
-      });
-      const data = await response.json();
-      console.log(data);
-      if (data.inserted) {
-        Swal.fire({
-          title: "Good job!",
-          text: "Assignment created successfully!",
-          icon: "success",
-        });
-        notify();
-      }
-    } catch (error) {
-      console.error("Error creating assignment:", error);
-    }
+const handleSubmit = async (event) => {
+  event.preventDefault();
+  const assignmentData = {
+    name: user?.displayName,
+    email: user?.email,
+    title,
+    description,
+    marks,
+    thumbnailUrl,
+    difficultyLevel,
+    dueDate,
   };
+
+  try {
+    const response = await fetch("http://localhost:5000/assignment", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(assignmentData),
+    });
+    const data = await response.json();
+    console.log(data);
+    if (data.inserted) {
+      Swal.fire({
+        title: "Good job!",
+        text: "Assignment created successfully!",
+        icon: "success",
+      });
+      notify();
+    }
+  } catch (error) {
+    console.error("Error creating assignment:", error);
+  }
+};
+
 
   return (
     <div className="max-w-md mx-auto mt-8">
