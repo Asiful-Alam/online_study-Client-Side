@@ -16,6 +16,7 @@ import Register from './Pages/Register';
 import CreateAssignment from './Pages/CreateAssignment';
 import ErrorPage from './Pages/ErrorPage';
 import AllAssignment from './Pages/AllAssignment';
+import Update from './Pages/Update';
 
 
 const router = createBrowserRouter([
@@ -48,6 +49,11 @@ const router = createBrowserRouter([
         path: "/assignment",
         element:<AllAssignment></AllAssignment>,
         loader: () => fetch('http://localhost:5000/assignment').then(res => res.json()),
+      },
+      {
+        path:"/update",
+        element:<Update></Update>,
+        // loader:({params})=> fetch(`http://localhost:5000/${params.email}/${params.id}`)
       },
     ]
   },
