@@ -20,6 +20,9 @@ import Update from './Pages/Update';
 import Details from './Pages/Details';
 import MyList from './Pages/MyList';
 import PrivateRoute from './PrivateRoute/PrivateRoute';
+import Submit from './Pages/Submit';
+import AllList from './Pages/AllList';
+
 
 
 
@@ -70,6 +73,14 @@ const router = createBrowserRouter([
       {
         path: "/mylist",
         element: <MyList></MyList>
+      },
+      {
+        path: "/submit/:id",
+        element: <Submit></Submit>
+      },
+      {
+        path: "/alllist",
+        element: <AllList></AllList>
       },
     ]
   },

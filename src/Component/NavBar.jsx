@@ -66,6 +66,14 @@ const NavBar = () => {
           Login
         </NavLink>
       </li>
+      <li>
+        <NavLink
+          activeClassName="border-2 bg-transparent text-yellow-500 border-green-500"
+          to="/alllist"
+        >
+          all list
+        </NavLink>
+      </li>
     </>
   );
 
