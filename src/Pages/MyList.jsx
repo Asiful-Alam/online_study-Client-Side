@@ -3,7 +3,6 @@ import Swal from "sweetalert2";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../Provider/AuthProvider";
 
-
 const MyList = () => {
   const { user } = useContext(AuthContext) || {};
   const [assignments, setAssignments] = useState([]);
@@ -32,110 +31,87 @@ const MyList = () => {
 
   const handleDelete = async (_id) => {
     const result = await Swal.fire({
-      title: 'Are you sure?',
+      title: "Are you sure?",
       text: "You won't be able to revert this!",
-      icon: 'warning',
+      icon: "warning",
       showCancelButton: true,
-      confirmButtonColor: '#3085d6',
-      cancelButtonColor: '#d33',
-      confirmButtonText: 'Yes, delete it!'
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!"
     });
     if (result.isConfirmed) {
       try {
         const response = await fetch(`http://localhost:5000/mylist/${_id}`, {
-          method: 'DELETE'
+          method: "DELETE"
         });
         if (response.ok) {
-          setAssignments(assignments.filter(assignment => assignment._id !== _id));
-          setFilteredAssignments(assignments.filter(assignment => assignment._id !== _id));
+          setAssignments(assignments.filter((assignment) => assignment._id !== _id));
+          setFilteredAssignments(filteredAssignments.filter((assignment) => assignment._id !== _id));
           Swal.fire(
-            'Deleted!',
-            'Your assignment has been deleted.',
-            'success'
+            "Deleted!",
+            "Your assignment has been deleted.",
+            "success"
           );
         } else {
           console.error("Failed to delete assignment:", response.status);
           Swal.fire(
-            'Error!',
-            'Failed to delete assignment.',
-            'error'
+            "Error!",
+            "Failed to delete assignment.",
+            "error"
           );
         }
       } catch (error) {
         console.error("Error deleting assignment:", error);
         Swal.fire(
-          'Error!',
-          'Failed to delete assignment.',
-          'error'
+          "Error!",
+          "Failed to delete assignment.",
+          "error"
         );
       }
     }
   };
 
   return (
-    <div className="my-10">
-    
-      <h2 className="text-center text-2xl font-lato font-bold mb-5">
-        My Assignment List
-      </h2>
-
-     
-
-      <div className="container mx-auto">
-        <div className="overflow-x-auto">
-          <table className="min-w-full divide-y divide-gray-200">
-            <thead className="bg-gray-50">
-              <tr>
-                <th className="px-6 py-3 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
-                  Title
-                </th>
-                <th className="px-6 py-3 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
-                  Description
-                </th>
-                <th className="px-6 py-3 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
-                  Marks
-                </th>
-                <th className="px-6 py-3 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
-                  Given Marks
-                </th>
-                <th className="px-6 py-3 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
-                  Due Date
-                </th>
-                <th className="px-6 py-3"></th>
+    <div className="container mx-auto px-4 py-8">
+      <h2 className="text-center text-3xl font-bold mb-8">My Assignment List</h2>
+      <div className="overflow-x-auto">
+        <table className="w-full table-auto">
+          <thead>
+            <tr>
+              <th className="px-4 py-2">Title</th>
+              <th className="px-4 py-2">Description</th>
+              <th className="px-4 py-2">Marks</th>
+              <th className="px-4 py-2">Given Marks</th>
+              <th className="px-4 py-2">Due Date</th>
+              <th className="px-4 py-2">Actions</th>
+            </tr>
+          </thead>
+          <tbody className="text-center">
+            {filteredAssignments.map((assignment, index) => (
+              <tr key={assignment._id} className={`${index % 2 === 0 ? 'bg-blue-100' : 'bg-green-100'}`}>
+                <td className="border px-4 py-2">{assignment.title}</td>
+                <td className="border px-4 py-2">{assignment.description}</td>
+                <td className="border px-4 py-2">{assignment.marks}</td>
+                <td className="border px-4 py-2">{assignment.given_mark ? assignment.given_mark : "Still Pending"}</td>
+                <td className="border px-4 py-2">{assignment.dueDate}</td>
+                <td className="border px-4 py-2">
+                  <button
+                    onClick={() => handleDelete(assignment._id)}
+                    className="bg-red-500 hover:bg-red-600 text-white font-bold py-1 px-4 rounded mr-2"
+                  >
+                    Delete
+                  </button>
+                  <Link
+                    to={`/update/${assignment._id}`}
+                    className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-1 px-4 rounded"
+                  >
+                    Edit
+                  </Link>
+                </td>
               </tr>
-            </thead>
-            <tbody className="bg-white divide-y divide-gray-200">
-              {filteredAssignments.map((assignment) => (
-                <tr key={assignment._id} className="hover:bg-gray-100">
-                  <td className="px-6 py-4 whitespace-nowrap">
-                    <div className="text-sm font-medium text-gray-900">{assignment.title}</div>
-                  </td>
-                  <td className="px-6 py-4 whitespace-nowrap">
-                    <div className="text-sm text-gray-500">{assignment.description}</div>
-                  </td>
-                  <td className="px-6 py-4 whitespace-nowrap">
-                    <div className="text-sm text-gray-500">{assignment.marks}</div>
-                  </td>
-                  
-                  <td className="px-6 py-4 whitespace-nowrap">
-                    <div className="text-sm text-gray-500">{assignment.given_mark?assignment.given_mark:'Still Pending'}</div>
-                  </td>
-                  <td className="px-6 py-4 whitespace-nowrap">
-                    <div className="text-sm text-gray-500">{assignment.dueDate}</div>
-                  </td>
-                  <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                    <button onClick={() => handleDelete(assignment._id)} className="btn text-red-600 hover:text-red-900 mr-2">
-                      Delete
-                    </button>
-                    <Link to={`/update/${assignment._id}`} className="text-indigo-600 hover:text-indigo-900">
-                      Edit
-                    </Link>
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
+            ))}
+          </tbody>
+        </table>
       </div>
     </div>
   );
