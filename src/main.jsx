@@ -72,7 +72,9 @@ const router = createBrowserRouter([
       },
       {
         path: "/mylist",
-        element: <MyList></MyList>
+        element: <PrivateRoute>
+          <MyList></MyList>
+        </PrivateRoute>
       },
       {
         path: "/submit/:id",
@@ -80,7 +82,9 @@ const router = createBrowserRouter([
       },
       {
         path: "/alllist",
-        element: <AllList></AllList>
+        element: <PrivateRoute>
+          <AllList></AllList>
+        </PrivateRoute>
       },
     ]
   },

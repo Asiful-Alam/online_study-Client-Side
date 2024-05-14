@@ -35,16 +35,13 @@ const AssignmentCard = ({ assignment }) => {
 
   return (
     <div className="flex flex-col max-w-lg p-6 space-y-6 overflow-hidden rounded-lg shadow-md bg-gray-900 dark:bg-gray-50 text-gray-100 dark:text-gray-800">
-      <div className="flex space-x-4">
-        <img
-          alt=""
-          src={assignment.displayimage}
-          className="object-cover w-12 h-12 rounded-full shadow bg-gray-500 dark:bg-gray-500"
-        />
-        <div className="flex flex-col space-y-1">
-          <p className="text-sm font-semibold">{assignment.email}</p>
+      <div className="flex justify-between">
+       <div className="flex justify-start">
+        <p className="text-sm font-semibold"><span className=" text-lg text-red-400">Level:</span>{assignment.difficultyLevel} </p></div>
+        <div className="flex flex-col space-y-1 justify-end ">
+          <p className="text-sm font-semibold"><span className=" text-lg text-red-400">Posted by:</span>{assignment.email}</p>
           <span className="text-xs text-gray-400 dark:text-gray-600">
-            {assignment.date}
+            {assignment.duedate}
           </span>
         </div>
       </div>
@@ -54,7 +51,7 @@ const AssignmentCard = ({ assignment }) => {
           alt={assignment.title}
           className="object-cover w-full mb-4 h-60 sm:h-96 bg-gray-500 dark:bg-gray-500"
         />
-        <h2 className="mb-1 text-xl font-semibold">{assignment.title}</h2>
+        <h2 className="mb-1 text-xl font-semibold"> <span className=" text-lg text-red-400">Title:</span>{assignment.title}</h2>
         <p className="text-sm text-gray-400 dark:text-gray-600">
           {assignment.description}
         </p>

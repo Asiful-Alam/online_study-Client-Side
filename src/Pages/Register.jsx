@@ -1,5 +1,8 @@
 import React, { useContext, useState } from "react";
+
 import { Link } from "react-router-dom";
+// import { useHistory } from "react-router-dom";
+
 import { toast } from 'react-toastify'; // Import toast
 import 'react-toastify/dist/ReactToastify.css'; // Import toast styles
 import { AuthContext } from "../Provider/AuthProvider";
@@ -9,6 +12,7 @@ import { AuthContext } from "../Provider/AuthProvider";
 
 
 const Register = () => {
+  // const history = useHistory();
   const [showPassword, setShowPassword] = useState(false);
   const [passwordError, setPasswordError] = useState("");
 
@@ -25,7 +29,7 @@ const Register = () => {
     const password = form.get("password");
     const name = form.get("name");
     const photoURL = form.get("photo");
-
+    console.log(email, password, name, photoURL)
     // Password complexity regex
     const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{6,}$/;
 
@@ -44,6 +48,7 @@ const Register = () => {
       });
       console.log(result);
       toast.success("Registration successful!");
+      // history.push("/login");
     } catch (error) {
       console.log(error);
       toast.error("Registration failed!");
