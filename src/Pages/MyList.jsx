@@ -30,7 +30,7 @@ const MyList = () => {
   }, [user?.email]);
 
   const handleDelete = async (_id) => {
-    const result = await Swal.fire({
+    const confirmed = await Swal.fire({
       title: "Are you sure?",
       text: "You won't be able to revert this!",
       icon: "warning",
@@ -39,37 +39,28 @@ const MyList = () => {
       cancelButtonColor: "#d33",
       confirmButtonText: "Yes, delete it!"
     });
-    if (result.isConfirmed) {
-      try {
-        const response = await fetch(`http://localhost:5000/mylist/${_id}`, {
-          method: "DELETE"
-        });
-        if (response.ok) {
-          setAssignments(assignments.filter((assignment) => assignment._id !== _id));
-          setFilteredAssignments(filteredAssignments.filter((assignment) => assignment._id !== _id));
-          Swal.fire(
-            "Deleted!",
-            "Your assignment has been deleted.",
-            "success"
-          );
-        } else {
-          console.error("Failed to delete assignment:", response.status);
-          Swal.fire(
-            "Error!",
-            "Failed to delete assignment.",
-            "error"
-          );
-        }
-      } catch (error) {
-        console.error("Error deleting assignment:", error);
-        Swal.fire(
-          "Error!",
-          "Failed to delete assignment.",
-          "error"
-        );
+  
+    if (!confirmed.isConfirmed) return;
+  
+    try {
+      const response = await fetch(`http://localhost:5000/mylist/${_id}`, {
+        method: "DELETE"
+      });
+  
+      if (response.ok) {
+        setAssignments(prevAssignments => prevAssignments.filter(assignment => assignment._id !== _id));
+        setFilteredAssignments(prevFilteredAssignments => prevFilteredAssignments.filter(assignment => assignment._id !== _id));
+        Swal.fire("Deleted!", "Your assignment has been deleted.", "success");
+      } else {
+        console.error("Failed to delete assignment:", response.status);
+        Swal.fire("Error!", "Failed to delete assignment.", "error");
       }
+    } catch (error) {
+      console.error("Error deleting assignment:", error);
+      Swal.fire("Error!", "Failed to delete assignment.", "error");
     }
   };
+  
 
   return (
     <div className="container mx-auto px-4 py-8">

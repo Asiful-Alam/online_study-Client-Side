@@ -22,6 +22,7 @@ import MyList from './Pages/MyList';
 import PrivateRoute from './PrivateRoute/PrivateRoute';
 import Submit from './Pages/Submit';
 import AllList from './Pages/AllList';
+import Modal from './Pages/Modal';
 
 
 
