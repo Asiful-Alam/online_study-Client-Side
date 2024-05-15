@@ -32,8 +32,8 @@ const Banner = () => {
           <div className="h-96 bg-cover bg-center flex items-center justify-center z-0" style={{ backgroundImage: `url(${bannerImage})`, borderRadius: '20px' }}>
             <div className="absolute inset-0 bg-black opacity-50"></div>
             <div className="absolute inset-0 flex flex-col items-center justify-center text-white px-6 md:px-0">
-              <h2 className="text-4xl font-semibold mb-4 text-center">Discover Your Dream Tour</h2>
-              <p className="text-lg text-center">Explore our curated selection of Tourist spots</p>
+              <h2 className="text-4xl font-semibold mb-4 text-center">Ignite Your Academic Journey</h2>
+              <p className="text-lg text-center">Discover resources tailored to boost your assignment skills and elevate your academic performance.</p>
               <Link to="/properties" className="mt-6 bg-blue-500 hover:bg-blue-600 text-white font-semibold py-3 px-6 rounded-full transition duration-300">View Details</Link>
             </div>
           </div>
@@ -42,8 +42,8 @@ const Banner = () => {
           <div className="h-96 bg-cover bg-center flex items-center justify-center z-0" style={{ backgroundImage: `url(${bannerImage})`, borderRadius: '20px' }}>
             <div className="absolute inset-0 bg-black opacity-50"></div>
             <div className="absolute inset-0 flex flex-col items-center justify-center text-white px-6 md:px-0">
-              <h2 className="text-4xl font-semibold mb-4 text-center">Discover Your Dream Tour</h2>
-              <p className="text-lg text-center">Explore our curated selection of Tourist spots</p>
+              <h2 className="text-4xl font-semibold mb-4 text-center">Unlock Your Potential with Assignments</h2>
+              <p className="text-lg text-center">Explore a vast array of assignment materials designed to help you tackle any academic challenge.</p>
               <Link to="/properties" className="mt-6 bg-blue-500 hover:bg-blue-600 text-white font-semibold py-3 px-6 rounded-full transition duration-300">View Details</Link>
             </div>
           </div>
@@ -52,8 +52,8 @@ const Banner = () => {
           <div className="h-96 bg-cover bg-center flex items-center justify-center z-0" style={{ backgroundImage: `url(${bannerImage})`, borderRadius: '20px' }}>
             <div className="absolute inset-0 bg-black opacity-50"></div>
             <div className="absolute inset-0 flex flex-col items-center justify-center text-white px-6 md:px-0">
-              <h2 className="text-4xl font-semibold mb-4 text-center">Discover Your Dream Tour</h2>
-              <p className="text-lg text-center">Explore our curated selection of Tourist spots</p>
+              <h2 className="text-4xl font-semibold mb-4 text-center">Excel in Every Assignment Task</h2>
+              <p className="text-lg text-center">Navigate through expert advice, tips, and tools to ace every assignment and succeed in your studies.</p>
               <Link to="/properties" className="mt-6 bg-blue-500 hover:bg-blue-600 text-white font-semibold py-3 px-6 rounded-full transition duration-300">View Details</Link>
             </div>
           </div>

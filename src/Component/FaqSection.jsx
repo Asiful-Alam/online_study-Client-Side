@@ -6,19 +6,19 @@ const FaqSection = () => {
   const faqs = [
     {
       question: 'How do I access my study materials?',
-      answer: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis pretium, dolor sed consequat ullamcorper, tortor libero rhoncus sem, ut aliquet purus risus vel lorem.',
+      answer: 'You ,can access your study materials by logging into your account on our platform. '
     },
     {
       question: 'Can I download study materials for offline use?',
-      answer: 'Nulla nec enim tortor. Cras tincidunt quam eget purus maximus, ut ultricies lacus suscipit. Fusce semper malesuada orci, at efficitur odio posuere eu.',
+      answer: 'Yes, you can! We offer the option to download study materials for offline use. Simply navigate to the material you need and look for the download icon to save it to your device.',
     },
     {
       question: 'How can I contact customer support?',
-      answer: 'Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed aliquam id justo vel vehicula. Integer dapibus efficitur odio, et congue nulla.',
+      answer: 'Contacting customer support is easy. You can reach out to us via email at support@example.com or through our live chat feature available on our website. Our support team is available 24/7 to assist you with any queries or concerns.',
     },
     {
       question: 'What payment methods are accepted?',
-      answer: 'Duis fringilla, risus eget lacinia convallis, ex dui pretium nibh, nec finibus mi sapien vel arcu. Integer hendrerit ante vel dolor fermentum sollicitudin.',
+      answer: 'We accept various payment methods to make it convenient for you. You can pay using credit or debit cards, PayPal, or bank transfers. Rest assured, all transactions are secure and encrypted for your peace of mind.',
     },
   ];
 
