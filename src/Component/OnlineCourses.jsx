@@ -15,22 +15,22 @@ const OnlineCourses = () => {
     <div>
       <div>
         <h2 className="text-red-500 font-bold text-3xl text-center mt-10">Courses</h2>
-        <p className="text-gray-500 font-light mb-10 mt-6 text-center">These are all programming-related courses that can boost your skills.</p>
+        <p className="text-gray-500 font-medium mb-10 mt-6 text-center">These are all programming-related courses that can boost your skills.</p>
       </div>
       <div className="flex flex-wrap justify-between ml-3 md:flex row-span-2">
         <div className="flex flex-col max-w-md mb-6">
           <div className="bg-gradient-to-r from-purple-400 to-pink-500 shadow-lg rounded-lg overflow-hidden">
             <img
               className="w-full h-64 object-cover object-center"
-              src="https://via.placeholder.com/300x200"
+              src="https://images.pexels.com/photos/11035380/pexels-photo-11035380.jpeg"
               alt="Course Image"
             />
             <div className="p-6">
               <h2 className="text-xl font-semibold text-white mb-2">
-                Introduction to JavaScript
+                Introduction to Node
               </h2>
               <p className="text-gray-200 mb-4">
-                Learn the fundamentals of JavaScript programming language.
+                Learn the fundamentals of react.Lets explore this and leran this 
               </p>
               <p className="text-gray-300 mb-2">Instructor: John Doe</p>
               <div className="flex justify-between items-center">
@@ -51,12 +51,12 @@ const OnlineCourses = () => {
           <div className="bg-gradient-to-r from-purple-400 to-pink-500 shadow-lg rounded-lg overflow-hidden">
             <img
               className="w-full h-64 object-cover object-center"
-              src="https://via.placeholder.com/300x200"
+              src="https://images.pexels.com/photos/11035471/pexels-photo-11035471.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
               alt="Course Image"
             />
             <div className="p-6">
               <h2 className="text-xl font-semibold text-gray-800 mb-2">
-                Introduction to Python Programming
+                Introduction to React 
               </h2>
               <p className="text-gray-600 mb-4">
                 Explore the basics of Python programming language and its
@@ -80,7 +80,7 @@ const OnlineCourses = () => {
           <div className="bg-gradient-to-r from-purple-400 to-pink-500 shadow-lg rounded-lg overflow-hidden">
             <img
               className="w-full h-64 object-cover object-center"
-              src="https://via.placeholder.com/300x200"
+              src="https://media.istockphoto.com/id/1284271878/photo/javascript-inscription-against-laptop-and-code-background-learn-javascript-programming.jpg?s=1024x1024&w=is&k=20&c=iGiUPCesPFZq06F0eE_I72w5Z7dW_LgUeciGmyONLcM="
               alt="Course Image"
             />
             <div className="p-6">
@@ -88,8 +88,7 @@ const OnlineCourses = () => {
                 Introduction to Data Science
               </h2>
               <p className="text-gray-600 mb-4">
-                Learn the fundamentals of data science, including data analysis,
-                visualization, and machine learning.
+              Learn the fundamentals of JavaScript programming language.
               </p>
               <p className="text-gray-700 mb-2">Instructor: Alex Johnson</p>
               <div className="flex justify-between items-center">
@@ -109,7 +108,7 @@ const OnlineCourses = () => {
           <div className="bg-gradient-to-r from-purple-400 to-pink-500 shadow-lg rounded-lg overflow-hidden">
             <img
               className="w-full h-64 object-cover object-center"
-              src="https://via.placeholder.com/300x200"
+              src="https://images.pexels.com/photos/4383298/pexels-photo-4383298.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
               alt="Course Image"
             />
             <div className="p-6">

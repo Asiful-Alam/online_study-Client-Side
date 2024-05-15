@@ -55,13 +55,14 @@ const AuthProvider = ({ children }) => {
 
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+            const userEmail = currentUser?.email || (user && user.email);
+            const loggedUser = { email: userEmail };
             setUser(currentUser);
+            console.log("current user",currentUser)
             setLoading(false);
             // if user exists then issue a token
             if (currentUser) {
-                const userEmail = currentUser.email;
-                const loggedUser = { email: userEmail };
-                axios.post('http://localhost:5000/jwt', loggedUser, { withCredentials: true })
+                 axios.post('http://localhost:5000/jwt', loggedUser, { withCredentials: true })
                     .then(res => {
                         console.log('token response', res.data);
                     })
@@ -70,15 +71,13 @@ const AuthProvider = ({ children }) => {
                     });
             } else {
                 // No user, perform logout
-                axios.post('http://localhost:5000/logout', {}, { withCredentials: true })
+                axios.post('http://localhost:5000/logout', loggedUser, { withCredentials: true })
                 .then(res => {
                     console.log(res.data);
                 })
                 .catch(error => {
                     console.error('Error logging out:', error);
                 });
-            
-                    
             }
         });
         return () => {

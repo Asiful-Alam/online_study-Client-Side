@@ -3,16 +3,15 @@ import Swal from "sweetalert2";
 
 const AllList = () => {
   const [pendingAssignments, setPendingAssignments] = useState([]);
-
+  
   const fetchAssignments = () => {
-    fetch("http://localhost:5000/all-list")
+    fetch("http://localhost:5000/all-list",{credentials:'include'})
       .then((response) => response.json())
       .then((data) => {
         setPendingAssignments(data);
       })
       .catch((error) => console.error("Error fetching assignments:", error));
   };
-
   useEffect(() => {
     fetchAssignments();
   }, []);

@@ -7,31 +7,31 @@ import { useParams } from "react-router-dom";
 const Submit = () => {
     const { user } = useContext(AuthContext);
     const { id } = useParams();
-    const [input1, setInput1] = useState("");
-    const [input2, setInput2] = useState("");
+    const [pdfLink, setPdfLink] = useState("");
+    const [note, setNote] = useState("");
 
     const notify = () => toast("Submission successful!");
 
-    const handleInput1Change = (e) => {
-        setInput1(e.target.value);
+    const handlePdfLinkChange = (e) => {
+        setPdfLink(e.target.value);
     };
 
-    const handleInput2Change = (e) => {
-        setInput2(e.target.value);
+    const handleNoteChange = (e) => {
+        setNote(e.target.value);
     };
 
     const handleSubmit = async (event) => {
         event.preventDefault();
         const form = event.target;
         const email = user?.email;
-        const data = form.data.value;
-        const conclusion = form.conclusion.value;
+        const pdfLink = form.pdfLink.value;
+        const note = form.note.value;
         const assignment_id = id;
 
-        const addsubmitData = {
+        const submissionData = {
             email,
-            data,
-            conclusion,
+            pdfLink,
+            note,
             assignment_id,
         };
 
@@ -39,7 +39,7 @@ const Submit = () => {
             const response = await fetch("http://localhost:5000/mylist", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
-                body: JSON.stringify(addsubmitData),
+                body: JSON.stringify(submissionData),
             });
             const responseData = await response.json();
             console.log(responseData);
@@ -55,8 +55,8 @@ const Submit = () => {
             console.error("Error:", error);
         }
 
-        setInput1("");
-        setInput2("");
+        setPdfLink("");
+        setNote("");
     };
 
     return (
@@ -64,30 +64,30 @@ const Submit = () => {
             <h2 className="text-2xl font-semibold mb-4">Submit Form</h2>
             <form onSubmit={handleSubmit} className="space-y-4">
                 <div>
-                    <label htmlFor="input1" className="block text-lg font-medium mb-1">
-                        Input 1:
+                    <label htmlFor="pdfLink" className="block text-lg font-medium mb-1">
+                        PDF/Doc Link:
                     </label>
                     <input
                         type="text"
-                        id="input1"
-                        name="data"
-                        value={input1}
-                        onChange={handleInput1Change}
+                        id="pdfLink"
+                        name="pdfLink"
+                        value={pdfLink}
+                        onChange={handlePdfLinkChange}
                         className="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:border-blue-500"
                     />
                 </div>
                 <div>
-                    <label htmlFor="input2" className="block text-lg font-medium mb-1">
-                        Input 2:
+                    <label htmlFor="note" className="block text-lg font-medium mb-1">
+                        Quick Note:
                     </label>
-                    <input
-                        type="text"
-                        id="input2"
-                        name="conclusion"
-                        value={input2}
-                        onChange={handleInput2Change}
+                    <textarea
+                        id="note"
+                        name="note"
+                        value={note}
+                        onChange={handleNoteChange}
                         className="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:border-blue-500"
-                    />
+                        rows="4"
+                    ></textarea>
                 </div>
                 <button
                     type="submit"

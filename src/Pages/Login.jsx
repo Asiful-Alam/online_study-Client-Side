@@ -8,8 +8,6 @@ import { useContext } from "react";
 import { useForm } from "react-hook-form";
 import { AuthContext } from "../Provider/AuthProvider";
 
-
-
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
 
@@ -18,8 +16,7 @@ const Login = () => {
   };
 
   const { register, handleSubmit } = useForm();
-  const { signIn, signInWithGoogle, signInWithGitHub } =
-    useContext(AuthContext);
+  const { signIn, signInWithGoogle, signInWithGitHub } = useContext(AuthContext);
   const location = useLocation();
   const navigate = useNavigate();
 
@@ -33,12 +30,13 @@ const Login = () => {
       const result = await signIn(email, password);
       console.log(result.user);
       navigate(location.state ? location.state : "/");
-      toast.success("Login successful");
+      toast.success("Login successful"); // Display success toast
     } catch (error) {
       console.log(error);
-      toast.error("Login failed");
+      toast.error("Login failed"); // Display error toast
     }
   };
+  
 
   const handleGoogleSignIn = async () => {
     try {
@@ -63,17 +61,16 @@ const Login = () => {
   };
 
   return (
-    <div className="flex flex-row">
-      <div className="flex justify-center mb-10">
-        <img className="w-full  " src={registerImage} alt="Register" />
-
+    <div className="flex flex-col sm:flex-row justify-center items-center space-y-6 sm:space-y-0 sm:space-x-6">
+      <div className="hidden sm:block flex justify-center">
+        <img className="w-full" src={registerImage} alt="Register" />
       </div>
-      <div className=" w-full max-w-md  p-4 rounded-md shadow sm:p-8 bg-gray-900 text-gray-100 mx-auto mb-10 justify-center">
+      <div className="w-full max-w-md p-4 rounded-md shadow bg-white text-gray-800 mx-auto mb-10 justify-center">
         <h2 className="mb-3 text-3xl font-semibold text-center">
           Login to your account
         </h2>
-        <p className="text-sm text-center text-gray-400">
-          Dont have account?
+        <p className="text-sm text-center text-gray-600">
+          Don't have an account?{" "}
           <Link className="text-blue-700 font-bold" to="/register">
             Register Here
           </Link>
@@ -83,14 +80,14 @@ const Login = () => {
             onClick={handleGoogleSignIn}
             aria-label="Login with Google"
             type="button"
-            className="flex items-center justify-center w-full p-4 space-x-4 border rounded-md focus:ring-2 focus:ring-offset-1 border-gray-400 focus:ring-violet-400"
+            className="flex items-center justify-center w-full p-4 space-x-4 border rounded-md focus:ring-2 focus:ring-offset-1 border-gray-400 focus:ring-blue-500 bg-white text-gray-700 hover:bg-gray-100"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 32 32"
               className="w-5 h-5 fill-current"
             >
-              <path d="M16.318 13.714v5.484h9.078c-0.37 2.354-2.745 6.901-9.078 6.901-5.458 0-9.917-4.521-9.917-10.099s4.458-10.099 9.917-10.099c3.109 0 5.193 1.318 6.38 2.464l4.339-4.182c-2.786-2.599-6.396-4.182-10.719-4.182-8.844 0-16 7.151-16 16s7.156 16 16 16c9.234 0 15.365-6.49 15.365-15.635 0-1.052-0.115-1.854-0.255-2.651z"></path>
+              <path d="M16 13.714v5.484h9.078c-0.37 2.354-2.745 6.901-9.078 6.901-5.458 0-9.917-4.521-9.917-10.099s4.458-10.099 9.917-10.099c3.109 0 5.193 1.318 6.38 2.464l4.339-4.182c-2.786-2.599-6.396-4.182-10.719-4.182-8.844 0-16 7.151-16 16s7.156 16 16 16c9.234 0 15.365-6.49 15.365-15.635 0-1.052-0.115-1.854-0.255-2.651z"></path>
             </svg>
             <p>Login with Google</p>
           </button>
@@ -100,7 +97,7 @@ const Login = () => {
             onClick={handleGitHubSignIn}
             aria-label="Login with Google"
             type="button"
-            className="flex items-center justify-center w-full p-4 space-x-4 border rounded-md focus:ring-2 focus:ring-offset-1 border-gray-400 focus:ring-violet-400"
+            className="flex items-center justify-center w-full p-4 space-x-4 border rounded-md focus:ring-2 focus:ring-offset-1 border-gray-400 focus:ring-blue-500 bg-white text-gray-700 hover:bg-gray-100"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -113,15 +110,14 @@ const Login = () => {
           </button>
         </div>
         <div className="flex items-center w-full my-4">
-          <hr className="w-full text-gray-400" />
+          <hr className="flex-grow text-gray-300" />
           <p className="px-3 text-gray-400">OR</p>
-          <hr className="w-full text-gray-400" />
+          <hr className="flex-grow text-gray-300" />
         </div>
         <form
           onSubmit={handleSubmit(onSubmit)}
           noValidate=""
-          action=""
-          className="space-y-8"
+          className="space-y-4"
         >
           <div className="space-y-4">
             <div className="space-y-2">
@@ -134,7 +130,7 @@ const Login = () => {
                 id="email"
                 required
                 placeholder="leroy@jenkins.com"
-                className="w-full px-3 py-2 border rounded-md border-gray-700 bg-gray-900 text-gray-100 focus:border-violet-400"
+                className="w-full px-3 py-2 border rounded-md border-gray-300 focus:border-blue-500 focus:outline-none"
               />
             </div>
             <div className="space-y-2">
@@ -143,7 +139,6 @@ const Login = () => {
                   Password
                 </label>
                 <a
-                  rel="noopener noreferrer"
                   href="#"
                   className="text-xs hover:underline text-gray-400"
                 >
@@ -157,7 +152,7 @@ const Login = () => {
                   id="password"
                   required
                   placeholder="*****"
-                  className="w-full px-3 py-2 border rounded-md border-gray-700 bg-gray-900 text-gray-100 focus:border-violet-400"
+                  className="w-full px-3 py-2 border rounded-md border-gray-300 focus:border-blue-500 focus:outline-none"
                 />
                 <button
                   type="button"
@@ -202,15 +197,15 @@ const Login = () => {
           </div>
           <button
             type="submit"
-            className="w-full px-8 py-3 font-semibold rounded-md bg-violet-400 text-gray-900"
+            className="w-full px-8 py-3 font-semibold rounded-md bg-blue-500 text-white hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
           >
             Sign in
           </button>
         </form>
       </div>
-     
     </div>
   );
 };
 
 export default Login;
+

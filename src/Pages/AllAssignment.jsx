@@ -1,4 +1,4 @@
-import  { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import AssignmentCard from "../Component/AssignmentCard";
 
 const AllAssignment = () => {
@@ -28,18 +28,18 @@ const AllAssignment = () => {
   };
 
   return (
-    <div>
-      <h1 className="text-2xl text-red-800 text-center">All Assignments</h1>
-      <div className="text-center mt-10">
-        <label htmlFor="difficultyFilter">Filter by Difficulty Level: </label>
-        <select id="difficultyFilter" value={filter} onChange={handleFilterChange}>
+    <div className="container mx-auto">
+      <h1 className="text-2xl text-red-800 text-center mt-10">All Assignments</h1>
+      <div className="text-center mt-5">
+        <label htmlFor="difficultyFilter" className="block">Filter by Difficulty Level: </label>
+        <select id="difficultyFilter" value={filter} onChange={handleFilterChange} className="block mx-auto mt-2 p-2 rounded-lg border border-gray-300 focus:outline-none focus:border-blue-500">
           <option value="all">All</option>
           <option value="easy">Easy</option>
           <option value="medium">Medium</option>
           <option value="hard">Hard</option>
         </select>
       </div>
-      <div className="grid grid-cols-3 gap-6 mt-10">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">
         {filteredAssignments.map(assignment => (
           <AssignmentCard key={assignment._id} assignment={assignment} />
         ))}

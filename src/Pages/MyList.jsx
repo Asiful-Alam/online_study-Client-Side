@@ -12,7 +12,7 @@ const MyList = () => {
     const fetchAssignments = async () => {
       try {
         const response = await fetch(
-          `http://localhost:5000/mylist/${user?.email}`
+          `http://localhost:5000/mylist/${user?.email}`,{credentials: 'include'}
         );
         if (response.ok) {
           const data = await response.json();
@@ -25,6 +25,7 @@ const MyList = () => {
         console.error("Error fetching assignments:", error);
       }
     };
+    
 
     fetchAssignments();
   }, [user?.email]);
@@ -86,6 +87,7 @@ const MyList = () => {
                 <td className="border px-4 py-2">{assignment.given_mark ? assignment.given_mark : "Still Pending"}</td>
                 <td className="border px-4 py-2">{assignment.dueDate}</td>
                 <td className="border px-4 py-2">
+                  <div className="flex flex-row">
                   <button
                     onClick={() => handleDelete(assignment._id)}
                     className="bg-red-500 hover:bg-red-600 text-white font-bold py-1 px-4 rounded mr-2"
@@ -98,6 +100,7 @@ const MyList = () => {
                   >
                     Edit
                   </Link>
+                  </div>
                 </td>
               </tr>
             ))}
