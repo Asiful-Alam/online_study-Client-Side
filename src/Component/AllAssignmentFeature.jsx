@@ -10,7 +10,7 @@ const AllAssignmentFeature = () => {
 
   const fetchAssignments = async () => {
     try {
-      const response = await fetch('http://localhost:5000/all-list');
+      const response = await fetch('https://online-study-server-delta.vercel.app/all-list');
       if (!response.ok) {
         throw new Error('Failed to fetch assignments');
       }

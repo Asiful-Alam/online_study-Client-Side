@@ -7,7 +7,7 @@ const AllAssignment = () => {
   const [filter, setFilter] = useState("all");
 
   useEffect(() => {
-    fetch('http://localhost:5000/assignment')
+    fetch('https://online-study-server-delta.vercel.app/assignment')
       .then(response => response.json())
       .then(data => {
         setAssignments(data);

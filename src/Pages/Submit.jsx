@@ -38,7 +38,7 @@ const Submit = () => {
     };
 
     try {
-        const response = await fetch("http://localhost:5000/mylist", {
+        const response = await fetch("https://online-study-server-delta.vercel.app/mylist", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(submissionData),

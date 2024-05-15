@@ -58,13 +58,13 @@ const router = createBrowserRouter([
       {
         path: "/assignment",
         element:<AllAssignment></AllAssignment>,
-        loader: () => fetch('http://localhost:5000/assignment').then(res => res.json()),
+        loader: () => fetch('https://online-study-server-delta.vercel.app/assignment').then(res => res.json()),
       },
       {
         path:"/update/:id",
         element:<Update></Update>,
-        // loader:({params})=> fetch(`http://localhost:5000/${params.email}/${params.id}`)
-        loader:(params) => fetch(`http://localhost:5000/${params.id}`)
+        // loader:({params})=> fetch(`https://online-study-server-delta.vercel.app/${params.email}/${params.id}`)
+        loader:(params) => fetch(`https://online-study-server-delta.vercel.app/${params.id}`)
       },
       // Update route configuration in main.jsx
       {

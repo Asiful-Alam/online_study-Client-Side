@@ -13,7 +13,7 @@ const MyList = () => {
     const fetchAssignments = async () => {
       try {
         const response = await fetch(
-          `http://localhost:5000/mylist/${user?.email}`,{credentials: 'include'}
+          `https://online-study-server-delta.vercel.app/mylist/${user?.email}`,{credentials: 'include'}
         );
         if (response.ok) {
           const data = await response.json();
@@ -45,7 +45,7 @@ const MyList = () => {
     if (!confirmed.isConfirmed) return;
   
     try {
-      const response = await fetch(`http://localhost:5000/mylist/${_id}`, {
+      const response = await fetch(`https://online-study-server-delta.vercel.app/mylist/${_id}`, {
         method: "DELETE"
       });
   

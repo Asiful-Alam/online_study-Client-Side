@@ -14,7 +14,7 @@ const AssignmentCard = ({ assignment }) => {
     });
     if (result.isConfirmed) {
       try {
-        const response = await fetch(`http://localhost:5000/assignment/${_id}`, {
+        const response = await fetch(`https://online-study-server-delta.vercel.app/assignment/${_id}`, {
           method: "DELETE",
         });
         if (response.ok) {

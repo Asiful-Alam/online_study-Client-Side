@@ -18,7 +18,7 @@ const Update = () => {
     useEffect(() => {
         const fetchAssignment = async () => {
             try {
-                const response = await fetch(`http://localhost:5000/assignment/${id}`);
+                const response = await fetch(`https://online-study-server-delta.vercel.app/assignment/${id}`);
                 if (!response.ok) {
                     throw new Error('Failed to fetch assignment data');
                 }
@@ -50,7 +50,7 @@ const Update = () => {
     const handleSubmit = async (event) => {
         event.preventDefault();
         try {
-            const response = await fetch(`http://localhost:5000/assignment/${id}`, {
+            const response = await fetch(`https://online-study-server-delta.vercel.app/assignment/${id}`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json',

@@ -5,7 +5,7 @@ const AllList = () => {
   const [pendingAssignments, setPendingAssignments] = useState([]);
   
   const fetchAssignments = () => {
-    fetch("http://localhost:5000/all-list",{credentials:'include'})
+    fetch("https://online-study-server-delta.vercel.app/all-list",{credentials:'include'})
       .then((response) => response.json())
       .then((data) => {
         setPendingAssignments(data);
@@ -27,7 +27,7 @@ const AllList = () => {
       feedback,
     };
 
-    fetch("http://localhost:5000/give-mark", {
+    fetch("https://online-study-server-delta.vercel.app/give-mark", {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(addsubmitData),
