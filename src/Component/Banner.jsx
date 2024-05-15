@@ -25,40 +25,42 @@ const Banner = () => {
     }
   };
 
-  
   return (
-    <Swiper {...swiperParams}>
-      <SwiperSlide>
-        <div className="relative h-96 bg-cover bg-center flex items-center justify-center  z-0" style={{ backgroundImage: `url(${bannerImage})`, borderRadius: '20px' }}>
-          <div className="absolute inset-0 bg-black opacity-50"></div>
-          <div className="absolute inset-0 flex flex-col items-center justify-center text-white">
-            <h2 className="text-4xl font-semibold mb-4">Discover Your Dream Tour</h2>
-            <p className="text-lg">Explore our curated selection of Tourist spot</p>
-            <Link to="/properties" className="mt-6 bg-blue-500 hover:bg-blue-600 text-white font-semibold py-3 px-6 rounded-full transition duration-300">View Details</Link>
+    <div className="relative">
+      <Swiper {...swiperParams}>
+        <SwiperSlide>
+          <div className="h-96 bg-cover bg-center flex items-center justify-center z-0" style={{ backgroundImage: `url(${bannerImage})`, borderRadius: '20px' }}>
+            <div className="absolute inset-0 bg-black opacity-50"></div>
+            <div className="absolute inset-0 flex flex-col items-center justify-center text-white px-6 md:px-0">
+              <h2 className="text-4xl font-semibold mb-4 text-center">Discover Your Dream Tour</h2>
+              <p className="text-lg text-center">Explore our curated selection of Tourist spots</p>
+              <Link to="/properties" className="mt-6 bg-blue-500 hover:bg-blue-600 text-white font-semibold py-3 px-6 rounded-full transition duration-300">View Details</Link>
+            </div>
           </div>
-        </div>
-      </SwiperSlide>
-      <SwiperSlide>
-        <div className="relative h-96 bg-cover bg-center flex items-center justify-center" style={{ backgroundImage: `url(${bannerImage})`, borderRadius: '20px' }}>
-          <div className="absolute inset-0 bg-black opacity-50"></div>
-          <div className="absolute inset-0 flex flex-col items-center justify-center text-white">
-            <h2 className="text-4xl font-semibold mb-4">Unlock Your Dream Tour plan with Us!</h2>
-            <p className="text-lg">Welcome to Asif Travel, your trusted partner in Tour excellence.</p>
-            <Link to="/contact" className="mt-6 bg-blue-500 hover:bg-blue-600 text-white font-semibold py-3 px-6 rounded-full transition duration-300">Contact Us</Link>
+        </SwiperSlide>
+        <SwiperSlide>
+          <div className="h-96 bg-cover bg-center flex items-center justify-center z-0" style={{ backgroundImage: `url(${bannerImage})`, borderRadius: '20px' }}>
+            <div className="absolute inset-0 bg-black opacity-50"></div>
+            <div className="absolute inset-0 flex flex-col items-center justify-center text-white px-6 md:px-0">
+              <h2 className="text-4xl font-semibold mb-4 text-center">Discover Your Dream Tour</h2>
+              <p className="text-lg text-center">Explore our curated selection of Tourist spots</p>
+              <Link to="/properties" className="mt-6 bg-blue-500 hover:bg-blue-600 text-white font-semibold py-3 px-6 rounded-full transition duration-300">View Details</Link>
+            </div>
           </div>
-        </div>
-      </SwiperSlide>
-      <SwiperSlide>
-        <div className="relative h-96 bg-cover bg-center flex items-center justify-center" style={{ backgroundImage: `url(${bannerImage})`, borderRadius: '20px' }}>
-          <div className="absolute inset-0 bg-black opacity-50"></div>
-          <div className="absolute inset-0 flex flex-col items-center justify-center text-white">
-            <h2 className="text-4xl font-semibold mb-4">Explore Exclusive Tourist place</h2>
-            <p className="text-lg">Discover the finest place in your desired location</p>
-            <Link to="/about" className="mt-6 bg-blue-500 hover:bg-blue-600 text-white font-semibold py-3 px-6 rounded-full transition duration-300">Learn More</Link>
+        </SwiperSlide>
+        <SwiperSlide>
+          <div className="h-96 bg-cover bg-center flex items-center justify-center z-0" style={{ backgroundImage: `url(${bannerImage})`, borderRadius: '20px' }}>
+            <div className="absolute inset-0 bg-black opacity-50"></div>
+            <div className="absolute inset-0 flex flex-col items-center justify-center text-white px-6 md:px-0">
+              <h2 className="text-4xl font-semibold mb-4 text-center">Discover Your Dream Tour</h2>
+              <p className="text-lg text-center">Explore our curated selection of Tourist spots</p>
+              <Link to="/properties" className="mt-6 bg-blue-500 hover:bg-blue-600 text-white font-semibold py-3 px-6 rounded-full transition duration-300">View Details</Link>
+            </div>
           </div>
-        </div>
-      </SwiperSlide>
-    </Swiper>
+        </SwiperSlide>
+        {/* Add other slides similarly */}
+      </Swiper>
+    </div>
   );
 };
 

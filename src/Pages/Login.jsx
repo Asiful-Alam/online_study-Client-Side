@@ -2,7 +2,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-
+import registerImage from "../assets/register.jpg";
 
 import { useContext } from "react";
 import { useForm } from "react-hook-form";
@@ -63,9 +63,12 @@ const Login = () => {
   };
 
   return (
-    <div>
-      
-      <div className="w-full max-w-md  p-4 rounded-md shadow sm:p-8 bg-gray-900 text-gray-100 mx-auto">
+    <div className="flex flex-row">
+      <div className="flex justify-center mb-10">
+        <img className="w-full  " src={registerImage} alt="Register" />
+
+      </div>
+      <div className=" w-full max-w-md  p-4 rounded-md shadow sm:p-8 bg-gray-900 text-gray-100 mx-auto mb-10 justify-center">
         <h2 className="mb-3 text-3xl font-semibold text-center">
           Login to your account
         </h2>
@@ -205,9 +208,7 @@ const Login = () => {
           </button>
         </form>
       </div>
-      <div className="mt-20">
      
-      </div>
     </div>
   );
 };

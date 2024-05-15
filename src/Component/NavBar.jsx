@@ -3,7 +3,6 @@ import { Link, NavLink } from "react-router-dom";
 import { Tooltip } from "react-tooltip";
 import { AuthContext } from "../Provider/AuthProvider";
 
-
 const NavBar = () => {
   const { user, logOut } = useContext(AuthContext);
   const [isOpen, setIsOpen] = useState(false);
@@ -80,26 +79,17 @@ const NavBar = () => {
   return (
     <div className="navbar my-8 z-10 relative">
       <p className="text-2xl gap-2 font-bold"><span>Online </span><span className="text-red-500"> Study</span></p>
-      <div className="ml-32">
-      <label className="swap swap-rotate">
-        <input onClick={toggleTheme} type="checkbox" />
-        {/* <div className="swap-on">DARKMODE</div>
-        <div className="swap-off">LIGHTMODE</div> */}
-        <input
-  type="checkbox"
-  value={theme === 'dark'}
-  className="toggle theme-controller"
-  onChange={toggleTheme}
-/>
-
-      </label>
+      <div className="ml-32 hidden lg:block">
+        <label className="swap swap-rotate">
+          <input onClick={toggleTheme} type="checkbox" />
+        </label>
       </div>
-      <div className="navbar-start">
+      <div className="navbar-start lg:hidden">
         <div className="dropdown">
           <div
             tabIndex={0}
             role="button"
-            className="btn btn-ghost lg:hidden"
+            className="btn btn-ghost"
             onClick={() => setIsOpen(!isOpen)}
           >
             <svg

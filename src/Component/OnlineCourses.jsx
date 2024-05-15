@@ -17,7 +17,7 @@ const OnlineCourses = () => {
         <h2 className="text-red-500 font-bold text-3xl text-center mt-10">Courses</h2>
         <p className="text-gray-500 font-light mb-10 mt-6 text-center">These are all programming-related courses that can boost your skills.</p>
       </div>
-      <div className="flex flex-wrap justify-between">
+      <div className="flex flex-wrap justify-between ml-3 md:flex row-span-2">
         <div className="flex flex-col max-w-md mb-6">
           <div className="bg-gradient-to-r from-purple-400 to-pink-500 shadow-lg rounded-lg overflow-hidden">
             <img
