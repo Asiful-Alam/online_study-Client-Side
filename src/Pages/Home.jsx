@@ -6,6 +6,7 @@ import DiscussionForum from "../Component/DiscussionForum ";
 import FaqSection from "../Component/FaqSection";
 import OnlineCourses from "../Component/OnlineCourses";
 import ShareButtons from "../Component/ShareButtons ";
+import AllAssignment from "./AllAssignment";
 // import AllAssignment from "./AllAssignment";
 
 const Home = () => {
@@ -14,7 +15,7 @@ const Home = () => {
       <div>
         <Banner></Banner>
         <div >
-          {/* <AllAssignment></AllAssignment> */}
+         
           <AllAssignmentFeature></AllAssignmentFeature>
           <OnlineCourses></OnlineCourses>
           <ChatCard></ChatCard>
