@@ -1,8 +1,18 @@
-# React + Vite
+# Welcome to Online Study  Website!
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+ - **This web app is completely responsive**
+ - **Used firebase for authentication and authorization**
+ - **Used mongodb atlas for DATABASE**
+ - **Added login system via google account,Github and Email &Password**
+ - **Added animation to make the UI look better**
+ - **Used swiper slider library to implement slider**
+ - **Used React Tool-tip library to implement Profile name**
+ - **Used Sweet alert**
+ - **Added JWT**
+ 
+# My Feature
+ - ** Add Assignment**
+ - ** Anyone can give mark to anyone Assignment**
+ - ** There are a few Course**
+ - ** There are a option where you can post and people can react here**
+ - ****

@@ -21,43 +21,47 @@ const Submit = () => {
     };
 
     const handleSubmit = async (event) => {
-        event.preventDefault();
-        const form = event.target;
-        const email = user?.email;
-        const pdfLink = form.pdfLink.value;
-        const note = form.note.value;
-        const assignment_id = id;
+    event.preventDefault();
+    // Add console log to check if handleSubmit is triggered
+    console.log('Submitting form...');
+    const form = event.target;
+    const email = user?.email;
+    const pdfLink = form.pdfLink.value;
+    const note = form.note.value;
+    const assignment_id = id;
 
-        const submissionData = {
-            email,
-            pdfLink,
-            note,
-            assignment_id,
-        };
-
-        try {
-            const response = await fetch("http://localhost:5000/mylist", {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify(submissionData),
-            });
-            const responseData = await response.json();
-            console.log(responseData);
-            if (responseData.inserted) {
-                Swal.fire({
-                    title: "Good job!",
-                    text: "Submission successful!",
-                    icon: "success",
-                });
-                notify(); // Display success toast
-            }
-        } catch (error) {
-            console.error("Error:", error);
-        }
-
-        setPdfLink("");
-        setNote("");
+    const submissionData = {
+        email,
+        pdfLink,
+        note,
+        assignment_id,
     };
+
+    try {
+        const response = await fetch("http://localhost:5000/mylist", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(submissionData),
+        });
+        const responseData = await response.json();
+        console.log(responseData); // Log the response data for debugging
+        if (responseData.inserted) {
+            console.log('Submission successful!'); // Log success message for debugging
+            Swal.fire({
+                title: "Good job!",
+                text: "Submission successful!",
+                icon: "success",
+            });
+            notify(); // Display success toast
+        }
+    } catch (error) {
+        console.error("Error:", error);
+    }
+
+    setPdfLink("");
+    setNote("");
+};
+
 
     return (
         <div className="max-w-md mx-auto mt-8 p-8 bg-white rounded-lg shadow-lg">
@@ -89,7 +93,7 @@ const Submit = () => {
                         rows="4"
                     ></textarea>
                 </div>
-                <button
+                <button onClick={notify}
                     type="submit"
                     className="w-full bg-blue-500 text-white px-6 py-3 rounded hover:bg-blue-600 focus:outline-none"
                 >
