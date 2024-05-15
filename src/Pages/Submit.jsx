@@ -49,7 +49,7 @@ const Submit = () => {
                     text: "Submission successful!",
                     icon: "success",
                 });
-                notify();
+                notify(); // Display success toast
             }
         } catch (error) {
             console.error("Error:", error);

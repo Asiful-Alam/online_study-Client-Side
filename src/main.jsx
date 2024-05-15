@@ -1,12 +1,11 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import './index.css'
-
-
 import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
+
 import Root from './Layout/Root';
 import Home from './Pages/Home';
 import Chat from './Component/Chat';
@@ -22,7 +21,8 @@ import MyList from './Pages/MyList';
 import PrivateRoute from './PrivateRoute/PrivateRoute';
 import Submit from './Pages/Submit';
 import AllList from './Pages/AllList';
-import Modal from './Pages/Modal';
+import DiscussionForum from './Component/DiscussionForum ';
+import { ToastContainer } from 'react-toastify';
 
 
 
@@ -87,6 +87,10 @@ const router = createBrowserRouter([
           <AllList></AllList>
         </PrivateRoute>
       },
+      {
+        path: "/posting",
+        element:<DiscussionForum></DiscussionForum>
+      },
     ]
   },
 ]);
@@ -94,7 +98,9 @@ const router = createBrowserRouter([
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <AuthProvider>
+      
     <RouterProvider router={router} />
+    <ToastContainer />
     </AuthProvider>
   </React.StrictMode>,
 )

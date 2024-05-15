@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import Swal from "sweetalert2";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../Provider/AuthProvider";
+import ShareButtons from "../Component/ShareButtons ";
 
 const MyList = () => {
   const { user } = useContext(AuthContext) || {};
@@ -106,6 +107,10 @@ const MyList = () => {
             ))}
           </tbody>
         </table>
+      </div>
+      <div>
+        <p className="font-bold text-red-700 text-xl mt-10">share your List into social media:</p>
+      <div className="mt-5"><ShareButtons></ShareButtons></div>
       </div>
     </div>
   );

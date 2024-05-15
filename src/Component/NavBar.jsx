@@ -53,7 +53,7 @@ const NavBar = () => {
           activeClassName="border-2 bg-transparent text-blue-500 border-blue-500"
           to="/mylist"
         >
-          My List
+          My Submitted
         </NavLink>
       </li>
       
@@ -70,7 +70,7 @@ const NavBar = () => {
           activeClassName="border-2 bg-transparent text-yellow-500 border-green-500"
           to="/alllist"
         >
-          all list
+          Pending assignments
         </NavLink>
       </li>
     </>
