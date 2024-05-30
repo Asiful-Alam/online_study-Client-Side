@@ -15,4 +15,11 @@
  - ** Anyone can give mark to anyone Assignment**
  - ** There are a few Course**
  - ** There are a option where you can post and people can react here**
+ - ** Added a quiz section, where student can test their basic knowledge**
+ - ** Added a Note section for yourself and get a Fourm section for study **
  - ****
+ 
+# Live Link
+ https://online-study-2061e.web.app/
+ - ****
+ 
