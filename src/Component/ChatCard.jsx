@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 const ChatCard = () => {
   return (
-    <div>
+    <div className="mt-10">
       <div className="mt-8 text-center">
         <h1 className="text-red-500 text-2xl font-bold">Post Your Thoughts</h1>
         <p className="font-light text-gray-500 mb-8 mt-4">You can post here and discuss with each other.In this you can post, comment,like,dislike.</p>

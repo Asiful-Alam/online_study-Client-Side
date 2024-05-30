@@ -61,7 +61,7 @@ const Login = () => {
   };
 
   return (
-    <div className="flex flex-col sm:flex-row justify-center items-center space-y-6 sm:space-y-0 sm:space-x-6">
+    <div className="flex flex-col sm:flex-row justify-center items-center space-y-6 sm:space-y-0 sm:space-x-6 mt-10">
       <div className="hidden sm:block flex justify-center">
         <img className="w-full" src={registerImage} alt="Register" />
       </div>

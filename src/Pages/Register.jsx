@@ -44,7 +44,7 @@ const Register = () => {
   };
 
   return (
-    <div className="flex flex-col sm:flex-row justify-center items-center gap-10">
+    <div className="flex flex-col sm:flex-row justify-center items-center gap-10 mt-10">
       <div className="sm:flex justify-center mt-4 sm:mt-0 w-full sm:w-auto">
         <div className="flex flex-col">
         <p className="text-blue-500 font-bold text-2xl mb-10">For better <span className="text-red-500">experience</span> please <span className="text-red-400">register</span> </p>
