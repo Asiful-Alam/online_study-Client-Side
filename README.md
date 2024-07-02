@@ -18,6 +18,12 @@
  - ** Added a quiz section, where student can test their basic knowledge**
  - ** Added a Note section for yourself and get a Fourm section for study **
  - ****
+ - # Technology Used
+ - ** React**
+ -** Javascript**
+ -** Flowbite**
+ -** MongoDB**
+ -** Express*
  
 # Live Link
  https://online-study-2061e.web.app/
