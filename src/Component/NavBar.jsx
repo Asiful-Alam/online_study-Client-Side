@@ -35,10 +35,11 @@ const NavBar = () => {
           activeClassName="border-2 bg-transparent text-blue-500 border-blue-500"
           to="/createassignment"
         >
-          Create Assignment
+          {/* Create Assignment */}
+          Add Product
         </NavLink>
       </li>
-      <li>
+      {/* <li>
         <NavLink
           activeClassName="border-2 bg-transparent text-blue-500 border-blue-500"
           to="/assignment"
@@ -53,7 +54,7 @@ const NavBar = () => {
         >
           My Submitted
         </NavLink>
-      </li>
+      </li> */}
       <li>
         <NavLink
           activeClassName="border-2 bg-transparent text-yellow-500 border-green-500"
@@ -62,14 +63,14 @@ const NavBar = () => {
           Login
         </NavLink>
       </li>
-      <li>
+      {/* <li>
         <NavLink
           activeClassName="border-2 bg-transparent text-yellow-500 border-green-500"
           to="/alllist"
         >
           Pending assignments
         </NavLink>
-      </li>
+      </li> */}
     </>
   );
 

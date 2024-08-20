@@ -1,27 +1,27 @@
 import  { useState } from 'react';
 import AllAssignmentFeature from "../Component/AllAssignmentFeature";
 import Banner from "../Component/Banner";
-import ChatCard from "../Component/ChatCard";
+// import ChatCard from "../Component/ChatCard";
 
-import FaqSection from "../Component/FaqSection";
-import OnlineCourses from "../Component/OnlineCourses";
+// import FaqSection from "../Component/FaqSection";
+// import OnlineCourses from "../Component/OnlineCourses";
 
-import StudyMaterial from "../Component/StudyMaterial";
-import Notebook from "../Component/Notebook"; // Assuming you have this component
-import Forum from "../Component/Forum"; // Assuming you have this component
+// import StudyMaterial from "../Component/StudyMaterial";
+// import Notebook from "../Component/Notebook"; // Assuming you have this component
+// import Forum from "../Component/Forum"; // Assuming you have this component
 
 const Home = () => {
-  const [view, setView] = useState('notebook');
+  // const [view, setView] = useState('notebook');
 
   return (
     <div className="container mx-auto">
       <Banner />
       <div>
         <AllAssignmentFeature />
-        <OnlineCourses />
-        <ChatCard />
+        {/* <OnlineCourses />
+        <ChatCard /> */}
       </div>
-      <div>
+      {/* <div>
         <p className="text-red-600 font-bold text-2xl text-center">Here You can Test Yourself</p>
         <div className="h-[300px] bg-gray-200 flex items-center justify-center my-10 mt-10">
           <StudyMaterial />
@@ -34,7 +34,7 @@ const Home = () => {
           {view === 'notebook' ? <Notebook /> : <Forum />}
         </div>
       </div>
-      <FaqSection />
+      <FaqSection /> */}
     </div>
   );
 };

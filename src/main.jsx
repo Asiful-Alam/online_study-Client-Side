@@ -37,10 +37,10 @@ const router = createBrowserRouter([
         path: "/",
         element:<Home></Home>,
       },
-      {
-        path: "/chat",
-        element:<Chat></Chat>,
-      },
+      // {
+      //   path: "/chat",
+      //   element:<Chat></Chat>,
+      // },
       {
         path: "/login",
         element:<Login></Login>
@@ -49,48 +49,47 @@ const router = createBrowserRouter([
         path: "/register",
         element:<Register></Register>
       },
-      {
-        path: "/createassignment",
-        element:<PrivateRoute>
-          <CreateAssignment></CreateAssignment>
-        </PrivateRoute>
-      },
-      {
-        path: "/assignment",
-        element:<AllAssignment></AllAssignment>,
-        loader: () => fetch('https://online-study-server-delta.vercel.app/assignment').then(res => res.json()),
-      },
-      {
-        path:"/update/:id",
-        element:<Update></Update>,
-        // loader:({params})=> fetch(`https://online-study-server-delta.vercel.app/${params.email}/${params.id}`)
-        loader:(params) => fetch(`https://online-study-server-delta.vercel.app/${params.id}`)
-      },
+      // {
+      //   path: "/createassignment",
+      //   element:<PrivateRoute>
+      //     <CreateAssignment></CreateAssignment>
+      //   </PrivateRoute>
+      // },
+      // {
+      //   path: "/assignment",
+      //   element:<AllAssignment></AllAssignment>,
+      //   loader: () => fetch('https://online-study-server-delta.vercel.app/assignment').then(res => res.json()),
+      // },
+      // {
+      //   path:"/update/:id",
+      //   element:<Update></Update>,
+      //   loader:(params) => fetch(`https://online-study-server-delta.vercel.app/${params.id}`)
+      // },
       // Update route configuration in main.jsx
-      {
-        path: "/details/:id",
-        element: <Details />
-      },
-      {
-        path: "/mylist",
-        element: <PrivateRoute>
-          <MyList></MyList>
-        </PrivateRoute>
-      },
-      {
-        path: "/submit/:id",
-        element: <Submit></Submit>
-      },
-      {
-        path: "/alllist",
-        element: <PrivateRoute>
-          <AllList></AllList>
-        </PrivateRoute>
-      },
-      {
-        path: "/posting",
-        element:<DiscussionForum></DiscussionForum>
-      },
+      // {
+      //   path: "/details/:id",
+      //   element: <Details />
+      // },
+      // {
+      //   path: "/mylist",
+      //   element: <PrivateRoute>
+      //     <MyList></MyList>
+      //   </PrivateRoute>
+      // },
+      // {
+      //   path: "/submit/:id",
+      //   element: <Submit></Submit>
+      // },
+      // {
+      //   path: "/alllist",
+      //   element: <PrivateRoute>
+      //     <AllList></AllList>
+      //   </PrivateRoute>
+      // },
+      // {
+      //   path: "/posting",
+      //   element:<DiscussionForum></DiscussionForum>
+      // },
     ]
   },
 ]);
