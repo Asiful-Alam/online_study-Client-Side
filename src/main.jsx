@@ -49,12 +49,12 @@ const router = createBrowserRouter([
         path: "/register",
         element:<Register></Register>
       },
-      // {
-      //   path: "/createassignment",
-      //   element:<PrivateRoute>
-      //     <CreateAssignment></CreateAssignment>
-      //   </PrivateRoute>
-      // },
+      {
+        path: "/createassignment",
+        element:<PrivateRoute>
+          <CreateAssignment></CreateAssignment>
+        </PrivateRoute>
+      },
       // {
       //   path: "/assignment",
       //   element:<AllAssignment></AllAssignment>,

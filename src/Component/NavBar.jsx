@@ -79,8 +79,8 @@ const NavBar = () => {
       <div className="navbar-start">
         <div className="flex-1 flex items-center justify-between lg:justify-start">
           <Link to="/" className="text-2xl font-bold">
-            <span>Online </span>
-            <span className="text-red-500">Study</span>
+            <span>E-Com </span>
+            <span className="text-red-500">Shop</span>
           </Link>
           <div className="ml-6 lg:hidden">
             <button onClick={() => setIsOpen(!isOpen)} className="btn btn-ghost">

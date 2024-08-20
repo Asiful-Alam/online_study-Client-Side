@@ -117,15 +117,17 @@ const AssignmentCard = ({ assignment }) => {
   };
 
   return (
-    <div className="container max-w-lg p-6 space-y-6 overflow-hidden rounded-lg shadow-md bg-gray-900 dark:bg-gray-50 text-gray-100 dark:text-gray-800">
+    <div>
+      
+      <div className="container max-w-lg p-6 space-y-6 overflow-hidden rounded-lg shadow-md bg-gray-900 dark:bg-gray-50 text-gray-100 dark:text-gray-800">
       <div className="flex flex-col md:flex-row justify-between items-center">
         <div className="flex items-center space-x-2 mb-4 md:mb-0">
-          <p className="text-sm font-semibold">{assignment.difficultyLevel}</p>
+          {/* <p className="text-sm font-semibold">{assignment.difficultyLevel}</p> */}
         </div>
       </div>
       <div>
         <img
-          src={assignment.picture}
+          src={assignment.thumbnailUrl}
           alt={assignment.title}
           className="object-cover w-full mb-4 h-60 md:h-96 bg-gray-500 dark:bg-gray-500"
         />
@@ -139,9 +141,10 @@ const AssignmentCard = ({ assignment }) => {
         </div>
         <div className="mt-2">
           <span className="text-lg text-red-400">Date Added:</span>
-          <p className="text-sm font-semibold">{assignment.dateAdded}</p>
+          <p className="text-sm font-semibold">{assignment.dueDate}</p>
         </div>
       </div>
+    </div>
     </div>
   );
 };
